@@ -1,0 +1,116 @@
+# Configure a default setup of Home Assistant (frontend, api, etc)
+homeassistant:
+  latitude: !secret home_latitude
+  longitude: !secret home_longitude
+  elevation: !secret home_elevation
+  unit_system: imperial
+  time_zone: America/New_York
+  packages: !include_dir_named packages
+
+
+#wink:
+# Uncomment this if you are using SSL/TLS, running in Docker container, etc.
+# http:
+#   base_url: example.duckdns.org:8123
+
+# Text to speech
+#tts:
+#  - platform: google_translate
+
+
+# Includes
+#group: !include groups.yaml
+#automation: !include automations.yaml
+#script: !include scripts.yaml
+#scene: !include scenes.yaml
+#light: !include lights.yaml
+#camera: !include cameras.yaml
+
+
+
+# input_boolean:
+#   lights_off:
+#     name: Turn all Lights off
+#     initial: on
+#     icon: mdi:lightbulb-outline
+
+
+#   lock_house:
+#     name: lock all doors
+#     initial: off
+#     icon: mdi:door-open
+    
+    
+
+# blink:
+#   username: !secret blink_username
+#   password: !secret blink_password
+#   scan_interval: 300
+#   binary_sensors:
+#     monitored_conditions:
+#       - motion_enabled
+#       - motion_detected
+#   sensors:
+#     monitored_conditions:
+#       - battery
+#       - temperature
+#       - wifi_strength
+      
+      
+# climate:
+# # Example configuration.yaml entry
+#   - platform: honeywell
+#     username: !secret honeywell_username
+#     password: !secret honeywell_password
+#     region: us
+#   - platform: template
+#     sensors:
+#       current_temperature:
+#         unit_of_measurement: 'F'
+#         value_template: "{{ state_attrs('climate.sun_room', 'current_temperature') }}"
+
+
+    
+# binary_sensor:
+#   - platform: hikvision
+#     name: LaviewCam
+#     host: 192.168.1.183:18080
+#     username: !secret laviewcam_username
+#     password: !secret laviewcam_password
+
+#   - platform: hikvision
+#     name: nvr
+#     host: 192.168.1.4
+#     port: 18080
+#     ssl: false
+#     username: !secret laviewcam_username
+#     password: !secret laviewcam_password
+    
+
+    
+
+        
+# wake_on_lan:        
+        
+# media_player:
+#   - platform: webostv
+#     host: 192.168.1.155
+#     name: Living Room TV
+#     filename: webostv.conf
+#     timeout: 5
+#     turn_on_action:
+# #      service: persistent_notification.create
+# #      data:
+# #        message: "Turn on action"
+#       service: wake_on_lan.send_magic_packet
+#       data:
+#         mac: "14:c9:13:94:e0:35"
+
+#     customize:
+#       sources:
+#         - hdmi1
+#         - 'Amazon Prime Video'
+#         - youtube
+#         - makotv
+#         - netflix
+        
