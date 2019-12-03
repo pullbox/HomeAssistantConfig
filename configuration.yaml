@@ -8,6 +8,17 @@ homeassistant:
   packages: !include_dir_named packages
 
 
+http:
+  api_password: !secret api_password
+  ssl_certificate: /data/letsencrypt/live/bechtelus.duckdns.org/fullchain.pem
+  ssl_key: /data/letsencrypt/live/bechtelus.duckdns.org/privkey.pem
+  base_url: !secret ssldns_base_url
+  
+  
+zwave:
+  usb_path: /dev/ttyACM0
+  
+
 #wink:
 # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
 # http:
