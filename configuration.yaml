@@ -24,7 +24,7 @@ homeassistant:
 #script: !include scripts.yaml
 #scene: !include scenes.yaml
 #light: !include lights.yaml
-#camera: !include cameras.yaml
+camera: !include cameras.yaml
 
 
 
