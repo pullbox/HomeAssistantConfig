@@ -11,3 +11,18 @@ blink:
       - battery
       - temperature
       - wifi_strength
+      
+      
+      
+      
+# alias: 'Capture Entrance camera'
+# sequence:
+#     - service: blink.trigger_camera
+#       data:
+#         name: "entrance"
+#     - delay: 00:00:05  
+#     - service: blink.blink_update
+#     - service: camera.snapshot
+#       data:
+#           entity_id: camera.blink_entrance 
+#           filename: /config/captures/blink_entrance.jpg
