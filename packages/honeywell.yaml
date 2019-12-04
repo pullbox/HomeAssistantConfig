@@ -1,4 +1,4 @@
-climate honywell_upstairs:
+climate honeywell:
 # Example configuration.yaml entry
   - platform: honeywell
     username: !secret honeywell_username
