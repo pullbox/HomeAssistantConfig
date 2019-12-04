@@ -1,0 +1,15 @@
+sensor:
+  - platform: speedtest
+    server_id: 16977
+    minute:
+      - 0
+      - 30
+    monitored_conditions:
+      - ping
+      - download
+      - upload
+      
+binary_sensor:
+  platform: command_line
+  scan_interval: 30
+  name: WAN

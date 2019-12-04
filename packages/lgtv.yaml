@@ -1,0 +1,25 @@
+media_player lgtv:
+  - platform: webostv
+    host: 192.168.1.155
+    name: Living Room TV
+    filename: webostv.conf
+    timeout: 5
+    turn_on_action:
+#      service: persistent_notification.create
+#      data:
+#        message: "Turn on action"
+      service: wake_on_lan.send_magic_packet
+      data:
+        mac: "14:c9:13:94:e0:35"
+
+    customize:
+      sources:
+        - hdmi1
+        - 'Amazon Prime Video'
+        - youtube
+        - makotv
+        - netflix
+        - 'Disney Plus'
+        
+        
+      

@@ -1,0 +1,38 @@
+
+octoprint:
+  host: 192.168.1.50
+  api_key: !secret octopi_api_key
+  bed: true
+  number_of_tools: 3
+  sensors:
+    monitored_conditions:
+      - 'Current State' 
+      - 'Temperatures' 
+      - 'Job Percentage' 
+      - 'Time Elapsed' 
+      - 'Time Remaining'
+
+sensor octopi:
+  platform: template
+  sensors:
+    hotend:
+      friendly_name: 'Hotend Actual'
+      value_template: "{{ ((states.sensor.octoprint_actual_tool0_temp.state | float-32) | float*(5/9)) | round(2) }} °C"
+       
+    bed:
+      friendly_name: 'Bed Actual'
+      value_template: "{{ ((states.sensor.octoprint_actual_bed_temp.state | float-32) | float*(5/9)) | round(2) }} °C"
+       
+    hotend_target:
+      friendly_name: 'Hotend Target'
+      value_template: "{{ ((states.sensor.octoprint_target_tool0_temp.state | float-32) | float*(5/9)) | round(2) }} °C"
+       
+    bed_target:
+      friendly_name: 'Bed Target'
+      value_template: "{{ ((states.sensor.octoprint_target_bed_temp.state | float-32) | float*(5/9)) | round(2) }} °C"
+
+camera octopi:
+  - platform: mjpeg
+    name: OctoPrint
+    still_image_url: http://192.168.1.50:8080/?action=snapshot
+    mjpeg_url: http://192.168.1.50:8080/webcam/?action=stream

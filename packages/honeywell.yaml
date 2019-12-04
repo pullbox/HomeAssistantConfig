@@ -1,0 +1,11 @@
+climate honywell_upstairs:
+# Example configuration.yaml entry
+  - platform: honeywell
+    username: !secret honeywell_username
+    password: !secret honeywell_password
+    region: us
+  - platform: template
+    sensors:
+      current_temperature:
+        unit_of_measurement: 'F'
+        value_template: "{{ state_attrs('climate.sun_room', 'current_temperature') }}"

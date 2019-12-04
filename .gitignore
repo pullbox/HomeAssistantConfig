@@ -6,6 +6,7 @@
 !*.yaml
 !.gitignore
 !*.md
+!packages^M
 
 # Ignore folders.
 .storage
@@ -16,3 +17,4 @@
 ip_bans.yaml
 secrets.yaml
 known_devices.yaml
+webostv.conf

@@ -7,11 +7,11 @@ homeassistant:
   time_zone: America/New_York
   packages: !include_dir_named packages
 
+default_config:
 
 http:
-  api_password: !secret api_password
-  ssl_certificate: /data/letsencrypt/live/bechtelus.duckdns.org/fullchain.pem
-  ssl_key: /data/letsencrypt/live/bechtelus.duckdns.org/privkey.pem
+  ssl_certificate: /ssl/fullchain.pem
+  ssl_key: /ssl/privkey.pem
   base_url: !secret ssldns_base_url
   
   
@@ -30,12 +30,12 @@ zwave:
 
 
 # Includes
-#group: !include groups.yaml
+group: !include groups.yaml
 #automation: !include automations.yaml
 #script: !include scripts.yaml
 #scene: !include scenes.yaml
 #light: !include lights.yaml
-camera: !include cameras.yaml
+#camera: !include cameras.yaml
 
 
 
@@ -97,31 +97,8 @@ camera: !include cameras.yaml
 #     username: !secret laviewcam_username
 #     password: !secret laviewcam_password
     
-
-    
-
+#enable wake on lan for lgtv might need to be moved before the lgtv in the lgtv package
+wake_on_lan:        
         
-# wake_on_lan:        
-        
-# media_player:
-#   - platform: webostv
-#     host: 192.168.1.155
-#     name: Living Room TV
-#     filename: webostv.conf
-#     timeout: 5
-#     turn_on_action:
-# #      service: persistent_notification.create
-# #      data:
-# #        message: "Turn on action"
-#       service: wake_on_lan.send_magic_packet
-#       data:
-#         mac: "14:c9:13:94:e0:35"
 
-#     customize:
-#       sources:
-#         - hdmi1
-#         - 'Amazon Prime Video'
-#         - youtube
-#         - makotv
-#         - netflix
         
