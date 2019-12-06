@@ -13,11 +13,11 @@ http:
   ssl_certificate: /ssl/fullchain.pem
   ssl_key: /ssl/privkey.pem
   base_url: !secret ssldns_base_url
-  
+
   
 zwave:
   usb_path: /dev/ttyACM0
-  
+
 
 #wink:
 # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
@@ -37,33 +37,5 @@ group: !include groups.yaml
 #light: !include lights.yaml
 #camera: !include cameras.yaml
 
-
-
-# input_boolean:
-#   lights_off:
-#     name: Turn all Lights off
-#     initial: on
-#     icon: mdi:lightbulb-outline
-
-
-#   lock_house:
-#     name: lock all doors
-#     initial: off
-#     icon: mdi:door-open
-    
-    
-
-
-#   - platform: hikvision
-#     name: nvr
-#     host: 192.168.1.4
-#     port: 18080
-#     ssl: false
-#     username: !secret laviewcam_username
-#     password: !secret laviewcam_password
-    
 #enable wake on lan for lgtv might need to be moved before the lgtv in the lgtv package
-wake_on_lan:        
-        
-
-        
+wake_on_lan:

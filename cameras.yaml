@@ -1,22 +1,8 @@
 camera:
   - platform: generic
     name: LV-PWR302
-    still_image_url: http://192.168.1.183:18080/ISAPI/Streaming/channels/1/picture
-    stream_source: rtsp://192.168.1.183:554/r/av_stream
+    still_image_url: http://!secret camera_lv_pwr302:18080/ISAPI/Streaming/channels/1/picture
+    stream_source: rtsp://!secret camera_lv_pwr302:554/r/av_stream
     username: !secret laviewcam_username
     password: !secret laviewcam_password
     verify_ssl: false
-    
-    
-#  - platform: generic
-#    name: laview_porch
-#    still_image_url: http://192.168.254.2:18080/ISAPI/Streaming/channels/1/picture
-#    stream_source: rtsp://192.168.254.2:554/r/av_stream
-#    username: !secret laviewcam_username
-#    password: !secret laviewcam_password
-#    verify_ssl: false
-
-  - platform: mjpeg
-    name: OctoPrint
-    still_image_url: http://192.168.1.50:8080/?action=snapshot
-    mjpeg_url: http://192.168.1.50:8080/webcam/?action=stream
