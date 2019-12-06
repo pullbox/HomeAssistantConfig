@@ -18,6 +18,12 @@ http:
 zwave:
   usb_path: /dev/ttyACM0
 
+wemo:
+  discovery: false
+  static:
+    - !secret wemo_smart_switch
+    - !secret wemo_mini_1_switch
+
 
 #wink:
 # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
@@ -37,3 +43,10 @@ group: !include groups.yaml
 #light: !include lights.yaml
 #camera: !include cameras.yaml
 
+light:
+ - platform: group
+   name: Firstfloor Lights
+   entities:
+    - light.hue_entryway_new
+    - light.hue_living_room
+    - light.hue_libing_room_2
