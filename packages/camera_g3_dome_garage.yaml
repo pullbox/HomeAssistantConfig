@@ -1,0 +1,10 @@
+stream:
+
+camera:
+  - platform: generic
+    name: g3_dome_garage
+    still_image_url: !secret camera_g3_dome_garage_image_url
+    stream_source: !secret camera_g3_dome_garage_stream_url
+    username: !secret protect_username
+    password: !secret protect_password
+    verify_ssl: false
