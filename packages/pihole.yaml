@@ -6,17 +6,11 @@
 #  YouTube Video - https://youtu.be/woA88DFlH5c
 #-------------------------------------------
 pi_hole:
-  host: !secret pi_hole_ip_address:4865
+  host: !secret pi_hole_ip_addressport
   ssl: false
   verify_ssl: false
 
 sensor pi_hole:
-  # - platform: pi_hole
-  #   host: 192.168.10.11:80
-  #   location: admin
-  #   ssl: false
-  #   verify_ssl: false
-  #   monitored_conditions:
   #     - ads_blocked_today
   #     - ads_percentage_today
   #     - dns_queries_today

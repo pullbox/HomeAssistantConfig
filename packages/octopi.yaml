@@ -34,5 +34,5 @@ sensor octopi:
 camera octopi:
   - platform: mjpeg
     name: OctoPrint
-    still_image_url: http://!secret octopi_ip_address:8080/?action=snapshot
-    mjpeg_url: http://!secret octopi_ip_address:8080/webcam/?action=stream
+    still_image_url: !secret octopi_image_url
+    mjpeg_url: !secret octopi_mjpeg_url

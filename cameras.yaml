@@ -1,8 +1,1 @@
-camera:
-  - platform: generic
-    name: LV-PWR302
-    still_image_url: http://!secret camera_lv_pwr302:18080/ISAPI/Streaming/channels/1/picture
-    stream_source: rtsp://!secret camera_lv_pwr302:554/r/av_stream
-    username: !secret laviewcam_username
-    password: !secret laviewcam_password
-    verify_ssl: false
+
