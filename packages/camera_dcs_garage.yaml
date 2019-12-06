@@ -1,0 +1,12 @@
+camera:
+  - platform: mjpeg
+    name: camera_dcs_garage
+    still_image_url: !secret camera_dcs_920_garage_image_url
+    mjpeg_url: !secret camera_dcs_920_garage_stream_url
+    username: !secret dcs_920_username
+    password: !secret dcs_920_password
+    
+# binary_sensor camera_dcs_garage:
+#   - platform: D-Link
+#     name: camera_dcs_920_garage
+#     host: !secret camera_dcs_920_garage_ip_address
