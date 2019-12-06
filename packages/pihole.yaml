@@ -28,14 +28,17 @@ sensor pi_hole:
         value_template: "{{ 'Online' if is_state('device_tracker.pihole', 'home') else 'Offline' }}"
 
 # Pi-Hole switch
-# switch pihole:
-#   - platform: command_line
-#     switches:
-#     pihole_temp_disable:
-#       command_on: "curl -X GET 'http://192.168.10.11/admin/api.php?enable&auth='"
-#       command_off: "curl -X GET 'http://192.168.10.11/admin/api.php?disable=3600&auth='"
-#     command_state: "curl -X GET 'http://192.168.10.11/admin/api.php?status'| grep enabled"
-#     value_template: "{{ value_json.status == 'enabled' }}
+switch:
+  - platform: command_line
+    switches:
+      pihole_switch:
+        command_on: "curl -X GET 'http://192.168.1.161:4865/admin/api.php?enable&auth='"
+        command_off: "curl -X GET 'http://192.168.1.161:4865/admin/api.php?disable=3600&auth='"
+        command_state: "curl -X GET 'http://192.168.1.161:4865/admin/api.php?status'| grep enabled"
+#      command_on: !secret pi_hole_command_on
+#      command_off: !secret pi_hole_command_off
+#      command_state: !secret pi_hole_command_state
+        value_template: "{{ value_json.status == 'enabled' }}"
 
 #-------------------------------------------
 group pi_hole:
