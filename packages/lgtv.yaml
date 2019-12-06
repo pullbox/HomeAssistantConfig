@@ -1,6 +1,6 @@
 media_player:
   - platform: webostv
-    host: 192.168.1.155
+    host: !secret tv_lgtv_ip_address
     name: Living Room TV
     filename: webostv.conf
     timeout: 5
@@ -10,7 +10,7 @@ media_player:
 #        message: "Turn on action"
       service: wake_on_lan.send_magic_packet
       data:
-        mac: "14:c9:13:94:e0:35"
+        mac: !secret tv_lgtv_mac_address
 
     customize:
       sources:
@@ -20,6 +20,3 @@ media_player:
         - makotv
         - netflix
         - 'Disney Plus'
-        
-        
-      

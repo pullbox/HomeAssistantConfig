@@ -25,4 +25,4 @@ blink:
 #     - service: camera.snapshot
 #       data:
 #           entity_id: camera.blink_entrance 
-#           filename: /config/captures/blink_entrance.jpg
+#           filename: /config/captures/blink_entrance.jpg 

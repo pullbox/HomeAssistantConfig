@@ -1,6 +1,6 @@
 
 octoprint:
-  host: 192.168.1.50
+  host: !secret octopi_ip_address
   api_key: !secret octopi_api_key
   bed: true
   number_of_tools: 3
@@ -34,5 +34,5 @@ sensor octopi:
 camera octopi:
   - platform: mjpeg
     name: OctoPrint
-    still_image_url: http://192.168.1.50:8080/?action=snapshot
-    mjpeg_url: http://192.168.1.50:8080/webcam/?action=stream
+    still_image_url: http://!secret octopi_ip_address:8080/?action=snapshot
+    mjpeg_url: http://!secret octopi_ip_address:8080/webcam/?action=stream
