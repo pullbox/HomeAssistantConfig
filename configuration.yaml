@@ -25,8 +25,8 @@ zwave:
 #   base_url: example.duckdns.org:8123
 
 # Text to speech
-#tts:
-#  - platform: google_translate
+tts:
+  - platform: google_translate
 
 
 # Includes
