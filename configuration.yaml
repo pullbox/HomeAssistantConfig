@@ -37,5 +37,3 @@ group: !include groups.yaml
 #light: !include lights.yaml
 #camera: !include cameras.yaml
 
-#enable wake on lan for lgtv might need to be moved before the lgtv in the lgtv package
-wake_on_lan:
