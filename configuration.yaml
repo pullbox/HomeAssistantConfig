@@ -40,6 +40,6 @@ group: !include groups.yaml
 #automation: !include automations.yaml
 #script: !include scripts.yaml
 #scene: !include scenes.yaml
-light: !include light_group.yaml
+#light: !include lights.yaml
 #camera: !include cameras.yaml
 
