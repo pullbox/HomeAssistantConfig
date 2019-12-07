@@ -1,0 +1,16 @@
+
+#################################################################
+## Light Group
+#################################################################
+  group_living_room:
+    name: Living Room
+    entities:
+      - light.hue_living_room
+      - light.hue_living_room_2
+      - switch.stand_light
+    
+  group_entry_way:    
+    name: Entry Way
+    entities:
+      - light.hue_entryway_new
+      

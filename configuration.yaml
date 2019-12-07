@@ -40,13 +40,6 @@ group: !include groups.yaml
 #automation: !include automations.yaml
 #script: !include scripts.yaml
 #scene: !include scenes.yaml
-#light: !include lights.yaml
+light: !include light_group.yaml
 #camera: !include cameras.yaml
 
-light:
- - platform: group
-   name: Firstfloor Lights
-   entities:
-    - light.hue_entryway_new
-    - light.hue_living_room
-    - light.hue_libing_room_2
