@@ -17,6 +17,7 @@ http:
   
 zwave:
   usb_path: /dev/ttyACM0
+  network_key: !secret zwave_network_key
 
 wemo:
   discovery: false

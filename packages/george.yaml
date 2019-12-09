@@ -1,0 +1,8 @@
+# Example configuration.yaml entry
+sensor:
+  - platform: cpuspeed
+  
+  
+binary_sensor:
+  - platform: ping
+    host: !secret george_ip_address
