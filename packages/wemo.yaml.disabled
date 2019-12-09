@@ -1,3 +1,0 @@
-# Example configuration.yaml entry with automatic discovery enabled (by explicitly setting the discovery configuration item)
-wemo:
-  discovery: true
