@@ -6,9 +6,10 @@
 #  YouTube Video - https://youtu.be/woA88DFlH5c
 #-------------------------------------------
 pi_hole:
-  host: !secret pi_hole_ip_addressport
-  ssl: false
-  verify_ssl: false
+  - host: !secret pi_hole_1_ip_addressport
+  - host: !secret pi_hole_2_ip_addressport
+    ssl: false
+    verify_ssl: false
 
 sensor pi_hole:
   #     - ads_blocked_today
@@ -26,15 +27,50 @@ sensor pi_hole:
         friendly_name: 'PiHole'
         entity_id: []
         value_template: "{{ 'Online' if is_state('device_tracker.pihole', 'home') else 'Offline' }}"
+        
+        
+########################################################################
+# Pi Hole DNS Template to add both sets of data together from both DNS's 
+########################################################################
+# - platform: template
+#   sensors:
+#   dns_queries:
+#      friendly_name: "DNS Queries"
+#      value_template: >-
+#           {{ ( (states('sensor.pi_hole_dns_queries_today')|float) + (states('sensor.pi_hole_dns_queries_today_2')|float) )|round(0) }}
+# #-----------------------------------------------------------------------------#
+# - platform: template
+#   sensors:
+#   adverts_blocked:
+#      friendly_name: "Adverts Blocked"
+#      value_template: >-
+#           {{ ( (states('sensor.pi_hole_ads_blocked_today')|float) + (states('sensor.pi_hole_ads_blocked_today_2')|float) )|round(0) }}
+# #-----------------------------------------------------------------------------#
+# - platform: template
+#   sensors:
+#   percent_of_adverts_blocked:
+#      friendly_name: "Percent of Adverts Blocked"
+#      unit_of_measurement: '%'
+#      value_template: >-
+#           {{ ( (states('sensor.pi_hole_ads_percentage_blocked_today')|float) + (states('sensor.pi_hole_ads_percentage_blocked_today_2')|float) )|round(2) }}
+########################################################################
+        
+        
+        
 
 # Pi-Hole switch
 switch:
   - platform: command_line
     switches:
-      pihole_switch:
-        command_on: !secret pi_hole_command_on
-        command_off: !secret pi_hole_command_off
-        command_state: !secret pi_hole_command_state
+      pihole_1_switch:
+        command_on: !secret pi_hole_1_command_on
+        command_off: !secret pi_hole_1_command_off
+        command_state: !secret pi_hole_1_command_state
+        value_template: "{{ value_json.status == 'enabled' }}"
+      pihole_2_switch:
+        command_on: !secret pi_hole_2_command_on
+        command_off: !secret pi_hole_2_command_off
+        command_state: !secret pi_hole_2_command_state
         value_template: "{{ value_json.status == 'enabled' }}"
 
 #-------------------------------------------
