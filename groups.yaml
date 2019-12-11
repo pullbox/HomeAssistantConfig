@@ -6,7 +6,7 @@
     name: Living Room
     entities:
       - light.hue_living_room
-      - light.hue_living_room_2
+      - light.hue_libing_room_2
       - switch.stand_light
     
   group_entry_way:    
