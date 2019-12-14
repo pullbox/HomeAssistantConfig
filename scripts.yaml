@@ -1,0 +1,12 @@
+'1576310844380':
+  alias: Blink snap pictures
+  sequence:
+  - data:
+      name: My Camera
+    service: blink.trigger_camera
+  - delay: 00:00:05
+  - service: blink.blink_update
+  - data:
+      filename: /config/www/blink_entrance.jpg
+    entity_id: camera.blink_entrance
+    service: camera.snapshot
