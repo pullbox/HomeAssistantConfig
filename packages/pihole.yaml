@@ -7,7 +7,7 @@
 #-------------------------------------------
 pi_hole:
   - host: !secret pi_hole_1_ip_addressport
-  - host: !secret pi_hole_2_ip_addressport
+#  - host: !secret pi_hole_2_ip_addressport
     ssl: false
     verify_ssl: false
 
@@ -67,11 +67,11 @@ switch:
         command_off: !secret pi_hole_1_command_off
         command_state: !secret pi_hole_1_command_state
         value_template: "{{ value_json.status == 'enabled' }}"
-      pihole_2_switch:
-        command_on: !secret pi_hole_2_command_on
-        command_off: !secret pi_hole_2_command_off
-        command_state: !secret pi_hole_2_command_state
-        value_template: "{{ value_json.status == 'enabled' }}"
+    #   pihole_2_switch:
+    #     command_on: !secret pi_hole_2_command_on
+    #     command_off: !secret pi_hole_2_command_off
+    #     command_state: !secret pi_hole_2_command_state
+    #     value_template: "{{ value_json.status == 'enabled' }}"
 
 #-------------------------------------------
 group pi_hole:
