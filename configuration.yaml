@@ -6,6 +6,8 @@ homeassistant:
   unit_system: imperial
   time_zone: America/New_York
   packages: !include_dir_named packages
+  whitelist_external_dirs: 
+    - images
 
 default_config:
 
@@ -26,6 +28,15 @@ wemo:
     - !secret wemo_mini_1_switch
 
 
+tplink:
+  discovery: false
+  switch:
+    - host: !secret kasa_switch_1
+    - host: !secret kasa_switch_2
+    - host: !secret kasa_switch_3
+    - host: !secret kasa_switch_4
+
+
 #wink:
 # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
 # http:
@@ -39,7 +50,7 @@ tts:
 # Includes
 group: !include groups.yaml
 #automation: !include automations.yaml
-#script: !include scripts.yaml
+script: !include scripts.yaml
 #scene: !include scenes.yaml
 #light: !include lights.yaml
 #camera: !include cameras.yaml
