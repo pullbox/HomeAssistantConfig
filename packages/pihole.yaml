@@ -6,12 +6,11 @@
 #  YouTube Video - https://youtu.be/woA88DFlH5c
 #-------------------------------------------
 pi_hole:
-  - host: !secret pi_hole_1_ip_addressport
-#  - host: !secret pi_hole_2_ip_addressport
-    ssl: false
-    verify_ssl: false
+  host: !secret pi_hole_1_ip_addressport
+  ssl: false
+  verify_ssl: false
 
-sensor pi_hole:
+sensor: 
   #     - ads_blocked_today
   #     - ads_percentage_today
   #     - dns_queries_today
@@ -74,7 +73,7 @@ switch:
     #     value_template: "{{ value_json.status == 'enabled' }}"
 
 #-------------------------------------------
-group pi_hole:
+group:
   pi_hole:
     entities:
       - sensor.pi_hole

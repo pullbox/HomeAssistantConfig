@@ -5,6 +5,7 @@ homeassistant:
   elevation: !secret home_elevation
   unit_system: imperial
   time_zone: America/New_York
+  customize: !include customize.yaml
   packages: !include_dir_named packages
   whitelist_external_dirs: 
     - images
@@ -29,7 +30,7 @@ wemo:
 
 
 tplink:
-  discovery: false
+  discovery: true
   switch:
     - host: !secret kasa_switch_1
     - host: !secret kasa_switch_2
