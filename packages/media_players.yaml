@@ -23,6 +23,11 @@ media_player:
         - TV Scheduler
         - HDMI 1
         
+notify:
+  - platform: webostv
+    host: !secret tv_lgtv_ip_address
+    name: livingroom_tv
+    filename: webostv.conf
         
 sensor:
   - platform: template
