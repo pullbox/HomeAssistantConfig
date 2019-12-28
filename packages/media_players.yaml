@@ -23,6 +23,11 @@ media_player:
         - TV Scheduler
         - HDMI 1
         
+        
+  - platform: onkyo
+  #  host: !secret onkyo_ip_address
+  #  name: receiver
+        
 notify:
   - platform: webostv
     host: !secret tv_lgtv_ip_address
@@ -41,6 +46,3 @@ sensor:
         
         
         
-  - platform: onkyo
-    host: !secret onkyo_ip_address
-    name: receiver
