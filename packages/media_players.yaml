@@ -37,3 +37,10 @@ sensor:
           - media_player.living_room_tv
         value_template: "{{ states.media_player.living_room_tv.attributes.source }}"
         friendly_name: 'Living Room TV Source'
+        
+        
+        
+        
+  - platform: onkyo
+    host: !secret onkyo_ip_address
+    name: receiver
