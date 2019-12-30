@@ -61,7 +61,7 @@ sensor:
 switch:
   - platform: command_line
     switches:
-      pihole_2_switch:
+      pihole_switch:
         command_on: !secret pi_hole_2_command_on
         command_off: !secret pi_hole_2_command_off
         command_state: !secret pi_hole_2_command_state
