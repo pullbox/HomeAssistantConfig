@@ -53,9 +53,6 @@ sensor:
 #      value_template: >-
 #           {{ ( (states('sensor.pi_hole_ads_percentage_blocked_today')|float) + (states('sensor.pi_hole_ads_percentage_blocked_today_2')|float) )|round(2) }}
 ########################################################################
-        
-        
-        
 
 # Pi-Hole switch
 switch:
