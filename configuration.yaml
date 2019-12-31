@@ -53,7 +53,7 @@ tts:
 group: !include groups.yaml
 #automation: !include automations.yaml
 script: !include scripts.yaml
-#scene: !include scenes.yaml
+scene: !include scenes.yaml
 #light: !include lights.yaml
 #camera: !include cameras.yaml
 

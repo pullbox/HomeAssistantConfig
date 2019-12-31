@@ -1,0 +1,21 @@
+
+  - name: Livingroom normal
+    entities:
+      light.living_room:
+        state: on 
+        transition: 2
+        brightness_pct: 85
+      light.living_room_2:
+        state: on 
+        transition: 2
+        brightness_pct: 85
+  - name: Livingroom dim 
+    entities:
+      light.living_room:
+        state: on 
+        transition: 2
+        brightness_pct: 30
+      light.living_room_2:
+        state: on 
+        transition: 2
+        brightness_pct: 35
