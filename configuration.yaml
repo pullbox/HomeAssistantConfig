@@ -50,6 +50,12 @@ wemo:
     - !secret wemo_smart_switch
     - !secret wemo_mini_1_switch
 
+wink:
+  #email: !secret wink_email
+  #password: !secret wink_password
+  #client_id: !secret wink_client_id
+  #client_secret: !secret wink_client_secret
+
 
 tplink:
   discovery: true

@@ -33,7 +33,7 @@
           entities:
             - light.entryway
             - light.hue_living_room
-            - light.hue_living_room2
+            - light.hue_living_room_2
             - group.group_living_room
             - light.c44f33ab5155_192_168_1_66
             - switch.kasa_1
@@ -41,7 +41,7 @@
             - switch.kasa_4
             - switch.mini_1
             - switch.stand_light
-            - switch.switch.jasco_products_14291_in_wall_smart_switch_switch
+            - switch.jasco_products_14291_in_wall_smart_switch_switch
           states:
             - state: 'on'
               class: 'light-on'
@@ -59,6 +59,44 @@
               class: 'doorbell-on'
             - state: 'off'
               class: 'doorbell-off'
+
+        - name: aps
+          entities:
+            - device_tracker.ap_livingroom
+            - device_tracker.ap_nico
+            - device_tracker.ap_upstairs
+          states:
+            - state: 'home'
+              class: 'ap-on'
+            - state: 'away'
+              class: 'ap-off'
+            - state: 'unkown'
+              class: 'ap-off'
+
+        - name: garage
+          entities:
+            - cover.garage_door
+          states:
+            - state: 'open'
+              class: 'ga-open'
+            - state: 'closed'
+              class: 'ga-closed' 
+
+        - name:
+          entities:
+            - person.claudia_bechtel
+            - person.daniel_bechtel
+            - person.laura_bechtel
+            - person.nicolas_bechtel
+          states:
+            - state: 'home'
+              class: 'ps-home'
+            - state: 'away'
+              class: 'ps-away'
+            - state: 'not_home'
+              class: 'ps-away'
+            - state: 'unkown'
+              class: 'ap-off'
 
         - name: NVR
           entities:
