@@ -12,6 +12,32 @@ homeassistant:
 
 default_config:
 
+frontend:
+  extra_html_url:
+    - /local/custom_ui/state-card-floorplan.html
+
+panel_custom:
+  - name: floorplan
+    sidebar_title: Floorplan
+    sidebar_icon: mdi:home 
+    url_path: floorplan
+    config: !include floorplan.yaml
+
+binary_sensor:
+  - platform: mqtt
+    state_topic: dummy/floorplan/sensor
+    name: Floorplan
+    
+        #frontend: !include frontend.yaml
+        #panel_custom: !include panel_custom.yaml
+
+        #binary_sensor:
+        #  - platorm: mqtt
+        #    state_topic: dummy/floorplan/sensor
+        #    name: Floorplan
+
+mqtt:
+  broker: !secret mqtt_broker_ip
 
 http:
 #   ssl_certificate: /ssl/fullchain.pem
@@ -38,6 +64,9 @@ tplink:
     - host: !secret kasa_switch_3
     - host: !secret kasa_switch_4
 
+
+glances:
+  - host: !secret glances_ip_address
 
 #wink:
 # Uncomment this if you are using SSL/TLS, running in Docker container, etc.

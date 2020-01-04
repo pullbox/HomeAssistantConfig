@@ -7,7 +7,7 @@ sensor.aeon_labs_zw100_multisensor_6_burglar:
 sensor.jasco_products_zw6302_portable_smart_motion_sensor_burglar:
   friendly_name: sensor.living_room_burglar
 switch.jasco_products_14291_in_wall_smart_switch_switch:
-  friendly_name: switch.porch_light
+  friendly_name: porch_light
 sensor.aeon_labs_zw100_multisensor_6_luminance:
   friendly_name: sensor.office_luminance
 sensor.jasco_products_zw6302_portable_smart_motion_sensor_battery_level:
@@ -21,8 +21,16 @@ binary_sensor.jasco_products_zw6302_portable_smart_motion_sensor_sensor:
 sensor.jasco_products_zw6302_portable_smart_motion_sensor_sourcenodeid:
   friendly_name: sensor.living_room_sourcenodeid
 switch.kasa_2:
-  friendly_name: switch.kasa_2_office_led
+  friendly_name: office_cabinet_led
 switch.kasa_4:
-  friendly_name: switch.kasa_4_kitchen_cabinet_leds
+  friendly_name: kitchen_cabinet_leds
 switch.mini_1:
   friendly_name: wemo xmas lights
+
+switch.kasa_1:
+  friendly_name: office_LED_bridge
+
+
+binary_sensor.floorplan:
+  custom_ui_state_card: state-card-floorplan
+  config: !include floorplan.yaml

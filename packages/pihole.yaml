@@ -62,7 +62,7 @@ switch:
         command_on: !secret pi_hole_2_command_on
         command_off: !secret pi_hole_2_command_off
         command_state: !secret pi_hole_2_command_state
-        value_template: "{{ value_json.status == 'enabled' }}"
+        value_template: "{{ value_json.state == 'enabled' }}"
     #   pihole_2_switch:
     #     command_on: !secret pi_hole_2_command_on
     #     command_off: !secret pi_hole_2_command_off

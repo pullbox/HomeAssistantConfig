@@ -14,3 +14,7 @@
     entities:
       - light.hue_entryway_new
       
+  zones:
+    name: zones
+    entities:
+      - binary_sensor.floorplan
