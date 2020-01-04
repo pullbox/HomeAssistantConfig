@@ -12,7 +12,7 @@
   group_entry_way:    
     name: Entry Way
     entities:
-      - light.hue_entryway_new
+      - light.entryway
       
   zones:
     name: zones

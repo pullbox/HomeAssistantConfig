@@ -27,17 +27,12 @@ binary_sensor:
   - platform: mqtt
     state_topic: dummy/floorplan/sensor
     name: Floorplan
-    
-        #frontend: !include frontend.yaml
-        #panel_custom: !include panel_custom.yaml
-
-        #binary_sensor:
-        #  - platorm: mqtt
-        #    state_topic: dummy/floorplan/sensor
-        #    name: Floorplan
 
 mqtt:
   broker: !secret mqtt_broker_ip
+  port: 1883
+  username: !secret mqtt_user
+  password: !secret mqtt_password
 
 http:
 #   ssl_certificate: /ssl/fullchain.pem

@@ -32,8 +32,8 @@
         - name: Lights
           entities:
             - light.entryway
-            - light.living_room
-            - light.living_room2
+            - light.hue_living_room
+            - light.hue_living_room2
             - group.group_living_room
             - light.c44f33ab5155_192_168_1_66
             - switch.kasa_1
