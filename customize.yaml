@@ -24,6 +24,8 @@ switch.kasa_2:
   friendly_name: office_cabinet_led
 switch.kasa_4:
   friendly_name: kitchen_cabinet_leds
+switch.kasa_3:
+  friendly_name: garage_led
 switch.mini_1:
   friendly_name: wemo xmas lights
 
@@ -31,6 +33,9 @@ switch.kasa_1:
   friendly_name: office_LED_bridge
 
 
-binary_sensor.floorplan:
+binary_sensor.firstfloor:
   custom_ui_state_card: state-card-floorplan
-  config: !include floorplan.yaml
+  config: !include firstfloor.yaml
+binary_sensor.secondfloor:
+  custom_ui_state_card: state-card-floorplan
+  config: !include secondfloor.yaml

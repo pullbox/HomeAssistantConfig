@@ -13,8 +13,10 @@
     name: Entry Way
     entities:
       - light.entryway
+      - switch.jasco_products_14291_in_wall_smart_switch_switch
       
   zones:
     name: zones
     entities:
-      - binary_sensor.floorplan
+      - binary_sensor.firstfloor
+      - binary_sensor.secondfloor

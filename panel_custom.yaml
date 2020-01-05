@@ -1,5 +1,10 @@
-  - name: floorplan
-    sidebar_title: Floorplan
-    sidebar_icon: mdi:home
-    url_path: floorplan
-    config: !include floorplan.yaml
+  - name: firstfloor
+    sidebar_title: Firstfloor
+    sidebar_icon: mdi:home-floor-1
+    url_path: firstfloor
+    config: !include firstfloor.yaml
+  - name: secondfloor
+    sidebar_title: Secondfloor
+    sidebar_icon: mdi:home-floor-2
+    url_path: secondfloor
+  
