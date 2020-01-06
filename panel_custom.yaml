@@ -3,8 +3,9 @@
     sidebar_icon: mdi:home-floor-1
     url_path: firstfloor
     config: !include firstfloor.yaml
+
   - name: secondfloor
     sidebar_title: Secondfloor
     sidebar_icon: mdi:home-floor-2
     url_path: secondfloor
-  
+    config: !include secondfloor.yaml

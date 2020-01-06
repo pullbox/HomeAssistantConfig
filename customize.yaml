@@ -34,8 +34,28 @@ switch.kasa_1:
 
 
 binary_sensor.firstfloor:
-  custom_ui_state_card: state-card-floorplan
+  custom_ui_state_card: state-card-firstfloor
   config: !include firstfloor.yaml
+  floorplan_image: /local/custom_ui/floorplan/firstfloor.svg
+  entities:
+    - light.entryway
+    - light.hue_living_room
+    - light.hue_living_room_2
+    - group.group_living_room
+    - group.group_entry_way
+    - switch.kasa_1
+    - switch.kasa_2
+    - switch.kasa_3
+    - switch.kasa_4
+    - switch.mini_1
+    - switch.stand_light
+    - switch.jasco_products_14291_in_wall_smart_switch_switch
+
 binary_sensor.secondfloor:
   custom_ui_state_card: state-card-floorplan
   config: !include secondfloor.yaml
+  floorplan_image: /local/custom_ui/floorplan/secondfloor.svg
+  entities:
+    - device_tracker.ap_nico
+    - device_tracker.ap_upstairs
+    - switch.nico_pc

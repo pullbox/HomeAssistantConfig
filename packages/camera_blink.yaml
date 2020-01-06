@@ -14,12 +14,12 @@ blink:
       
       
       
-camera:
-  - platform: local_file
-    name: blink_living_room_jpg
-    file_path: /config/www/images/blink_livingroom.jpg
+# camera:
+#   - platform: local_file
+#     name: blink_living_room_jpg
+#     file_path: /config/www/images/blink_livingroom.jpg
     
-  - platform: local_file
-    name: blink_entrance_room_jpg
-    file_path: /config/www/images/blink_entrance.jpg
+#   - platform: local_file
+#     name: blink_entrance_room_jpg
+#     file_path: /config/www/images/blink_entrance.jpg
     

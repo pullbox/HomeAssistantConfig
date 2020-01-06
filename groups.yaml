@@ -8,7 +8,21 @@
       - light.hue_living_room
       - light.hue_libing_room_2
       - switch.stand_light
-    
+
+  group_firstfloor_lights:
+    name: Firstfloor lights
+    entities:
+      - light.entryway
+      - light.hue_living_room
+      - light.hue_living_room_2
+      - switch.kasa_1
+      - switch.kasa_2
+      - switch.kasa_3
+      - switch.kasa_4
+      - switch.mini_1
+      - switch.stand_light
+      - switch.jasco_products_14291_in_wall_smart_switch_switch
+
   group_entry_way:    
     name: Entry Way
     entities:
@@ -16,7 +30,8 @@
       - switch.jasco_products_14291_in_wall_smart_switch_switch
       
   zones:
-    name: zones
+    name: Zones
     entities:
+      - sensor.template_last_motion
       - binary_sensor.firstfloor
       - binary_sensor.secondfloor

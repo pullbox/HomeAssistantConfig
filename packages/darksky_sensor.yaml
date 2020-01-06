@@ -1,0 +1,16 @@
+sensor:
+  - platform: darksky
+    api_key: !secret darkskey_api_key
+    forecast:
+      - 0
+    hourly_forecast:
+      - 4
+      - 8
+    monitored_conditions:
+      - summary
+      - icon
+      - temperature
+      - wind_speed
+      - humidity
+    scan_interval:
+      minutes: 5

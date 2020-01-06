@@ -10,3 +10,26 @@
       filename: /config/www/blink_entrance.jpg
     entity_id: camera.blink_entrance
     service: camera.snapshot
+
+firstfloor_lights_toggle:
+    sequence:
+    - service: homeassistant.toggle
+      entity_id:  
+        - light.entryway
+        - light.hue_living_room
+        - light.hue_living_room_2
+        - switch.kasa_1
+        - switch.kasa_2
+        - switch.kasa_3
+        - switch.kasa_4
+        - switch.mini_1
+        - switch.stand_light
+        - switch.jasco_products_14291_in_wall_smart_switch_switch
+
+livingroom_lights_toggle:
+    sequence:
+    - service: homeassistant.toggle
+      entity_id:  
+        - light.hue_living_room
+        - light.hue_living_room_2
+        - switch.stand_light

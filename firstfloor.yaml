@@ -1,4 +1,4 @@
-      name: Home firstfloor
+      name: Home First Floor
       image: /local/custom_ui/floorplan/firstfloor.svg
       stylesheet: /local/custom_ui/floorplan/floorplan.css
       
@@ -102,9 +102,9 @@
             - light.hue_living_room_2
             - group.group_living_room
             - group.group_entry_way
-#            - light.c44f33ab5155_192_168_1_66
             - switch.kasa_1
             - switch.kasa_2
+            - switch.kasa_3
             - switch.kasa_4
             - switch.mini_1
             - switch.stand_light
@@ -118,6 +118,35 @@
             domain: homeassistant   # This optional parameter allows you to use other services such as homeassistant.toggle like here.
             service: toggle
 
+
+
+
+
+
+        - name: Toogle script firstfloor lights
+          entities:
+          - script.firstfloor_lights_toggle
+          action:
+            domain: homeassistant   
+            service: toggle
+
+        - name: Toogle script livingroom lights
+          entities:
+          - script.livingroom_lights_toggle
+          action:
+            domain: homeassistant   
+            service: toggle
+
+
+        - name: media_players
+          entities:
+            - media_player.living_room_tv
+            - media_player.ht_rc560_0009b0926861
+          states:
+            - state: 'on'
+              class: 'squeezebox-on'
+            - state: 'off'
+              class: 'squeezebox-off'
 #        - name: Switches
 #          entities:
 #            - switch.doorbell
@@ -127,20 +156,21 @@
 #            - state: 'off'
 #              class: 'doorbell-off'
 
-        - name: aps
+        - name: devices
           entities:
             - device_tracker.ap_livingroom
-            - device_tracker.lg_tv
-            - device_tracker.onkyo_receiver
-#            - device_tracker.ap_nico
-#            - device_tracker.ap_upstairs
-#          states:
-#            - state: 'home'
-#              class: 'ap-on'
-#            - state: 'away'
-#              class: 'ap-off'
-#            - state: 'unkown'
-#              class: 'ap-off'
+            - device_tracker.george
+            - device_tracker.canon_pro100
+            - device_tracker.canon_ts9120
+          states:
+            - state: 'home'
+              class: 'ap-on'
+            - state: 'away'
+              class: 'ap-off'
+            - state: 'not_home'
+              class: 'ap-off'
+            - state: 'unkown'
+              class: 'ap-off'
 
         - name: garage
           entities:
@@ -212,7 +242,7 @@
             - camera.g3_dome_garage
             - camera.lv_pwr302
             - camera.octoprint
-            - camera.blink_living_room_jpg
+            - camera.blink_livingroom
             - camera.blink_entrance
           states:
             - state: 'idle'
