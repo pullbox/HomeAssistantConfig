@@ -9,6 +9,12 @@ climate honeywell:
 sensor:
   - platform: template
     sensors:
-      current_temperature:
-        friendly_name: 'Current Temperature'
-        value_template: "{{ state_attr('climate.sun_room' , 'current_temperature') }}"
+      upstairs_temperature:
+        friendly_name: upstairs temp
+        value_template: "{{ state_attr('climate.sun_room', 'current_temperature') }}"
+        unit_of_measurement: F
+
+      upstairs_humitity:
+        friendly_name: upstairs humitity
+        value_template: "{{ state_attr('climate.sun_room', 'current_humidity') }}"
+        unit_of_measurement: "%"

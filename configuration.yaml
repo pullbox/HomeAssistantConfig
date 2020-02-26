@@ -11,6 +11,7 @@ homeassistant:
   #    - images
 
 default_config:
+ios:
 
 frontend:
   extra_html_url:
@@ -20,10 +21,20 @@ panel_custom: !include panel_custom.yaml
 binary_sensor: !include binary_sensors.yaml
 
 mqtt:
+  discovery: true
   broker: !secret mqtt_broker_ip
   port: 1883
   username: !secret mqtt_user
   password: !secret mqtt_password
+##  advanced:
+##    network_key: !secret zwave_network_key
+
+  birth_message:
+    topic: 'hass/status'
+    payload: 'online'
+  will_message:
+    topic: 'hass/status'
+    payload: 'offline'
 
 http:
 #   ssl_certificate: /ssl/fullchain.pem
@@ -31,9 +42,9 @@ http:
   base_url: !secret ssldns_base_url
 
   
-zwave:
-  usb_path: /dev/serial/by-id/usb-0658_0200-if00
-  network_key: !secret zwave_network_key
+#zwave:
+#  usb_path: /dev/serial/by-id/usb-0658_0200-if00
+#  network_key: !secret zwave_network_key
 
 wemo:
   discovery: false
@@ -41,7 +52,7 @@ wemo:
     - !secret wemo_smart_switch
     - !secret wemo_mini_1_switch
 
-wink:
+#wink:
 
 tplink:
   discovery: true
@@ -64,6 +75,11 @@ glances:
 tts:
   - platform: google_translate
 
+google:
+  client_id: !secret gcal_client_id
+  client_secret: !secret gcal_client_secret
+
+  
 
 # Includes
 group: !include groups.yaml

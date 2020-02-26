@@ -24,7 +24,32 @@ firstfloor_lights_toggle:
         - switch.kasa_4
         - switch.mini_1
         - switch.stand_light
-        - switch.jasco_products_14291_in_wall_smart_switch_switch
+        - switch.nodeid_4_switch
+
+
+firstfloor_lights_turn_off:
+    sequence:
+    - service: homeassistant.turn_off
+      entity_id:  
+        - light.entryway
+        - light.hue_living_room
+        - light.hue_living_room_2
+        - switch.kasa_1
+        - switch.kasa_2
+        - switch.kasa_3
+        - switch.kasa_4
+        - switch.mini_1
+        - switch.stand_light
+        - switch.nodeid_4_switch
+
+
+secondfloor_lights_turn_off:
+    sequence:
+    - service: homeassistant.turn_off
+      entity_id:  
+        - light.c44f33ab5155_192_168_1_66
+        - light.hue_white_lamp_1
+
 
 livingroom_lights_toggle:
     sequence:

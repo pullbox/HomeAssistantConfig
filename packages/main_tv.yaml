@@ -1,0 +1,42 @@
+
+wake_on_lan:
+
+webostv:
+    host: !secret tv_lgtv_ip_address
+    name: livingroom_tv
+#    filename: webostv.conf
+#    timeout: 5
+    turn_on_action:
+      service: wake_on_lan.send_magic_packet
+      data:
+        mac: !secret tv_lgtv_mac_address
+
+#    customize:
+#    sources:
+#      - HDMI 2
+#      - Amazon Prime Video
+#      - YouTube
+#      - makotv
+#      - Netflix
+#      - Disney Plus
+#      - TV Guide
+#      - TV Scheduler
+#      - HDMI 1
+
+media_player:
+
+notify:
+  - platform: webostv
+    host: !secret tv_lgtv_ip_address
+    name: livingroom_tv
+#    filename: webostv.conf
+
+sensor:
+  - platform: template
+    sensors:
+      living_room_tv_source:
+        entity_id:
+          - media_player.livingroom_tv
+        value_template: "{{ states.media_player.livingroom_tv.attributes.source }}"
+        friendly_name: 'Living Room TV Source'
+

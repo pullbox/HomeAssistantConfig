@@ -3,8 +3,8 @@
       stylesheet: /local/custom_ui/floorplan/floorplan.css
       
       # These options are optional
-      warnings:                  # enable warnings (to find out why things might ot be working correctly)
-      #pan_zoom:                  # enable experimental panning / zooming
+      # warnings:                  # enable warnings (to find out why things might ot be working correctly)
+      # pan_zoom:                  # enable experimental panning / zooming
       # hide_app_toolbar:          # hide the application toolbar (when used as a custom panel)
       # date_format: DD-MMM-YYYY   # Date format to use in hover-over text
       
@@ -12,103 +12,81 @@
       last_motion_class: last-motion
 
       groups:
-        - name: Sensors
+        - name: Sensors temp
           entities:
-            -  sensor.current_temperature
-          #text_template: '${entity.state ? entity.state : "unknown"}'
-          # An example of rounding up a number, i.e. a temperature of 90.1 becomes 91
-          text_template: '${entity.state ? Math.ceil(entity.state) : "undefined"}'  
+            -  sensor.office_temperatur
+            -  sensor.dark_sky_temperature
+          text_template: '${entity.state ? Math.ceil(entity.state) : "undefined"}°F'
           class_template: '
-            var temp = parseFloat(entity.state.replace("°", ""));
-            if (temp < 10)
+            var temp = parseFloat(entity.state.replace("°F", ""));
+            if (temp < 50) 
               return "temp-low";
-            else if (temp < 30)
+            else if (temp < 75) 
               return "temp-medium";
             else
               return "temp-high";
             '
 
-        # - name: weather.home
-          # entities:
-          #   - weather.home
-          # image_template: '
-          #   var imageName = "";
+        - name: Sensors humitity
+          entities:
+            -  sensor.office_humidity
+            -  sensor.dark_sky_humidity
+          text_template: '${entity.state ? Math.ceil(entity.state) : "undefined"}%'
+          class_template: '
+            var hum = parseFloat(entity.state.replace("%", ""));
+            if (hum < 33) 
+              return "hum-low";
+            else if (hum < 66) 
+              return "hum-medium";
+            else
+              return "hum-high";
+          '
 
-          #   switch (entity.state) {
-          #     case "clear-night":
-          #       imageName = "clear-night.jpg";
-          #       break;
+        - name: Sensors lum
+          entities:
+            -  sensor.office_luminence
+          text_template: '${entity.state ? Math.ceil(entity.state) : "undefined"}lux'
+          class_template: '
+            var lum = parseFloat(entity.state.replace("°", ""));
+            if (lum < 10)
+              return "lum-dark";
+            else if (lum < 20)
+              return "lum-semi";
+            else
+              return "lum-bright";
+          '
 
-          #     case "cloudy":
-          #       imageName = "cloudy.png";
-          #       break;
+        - name: Text Sensors
+          entities:
+            - sensor.time
+            - sensor.date
+          text_template: '${entity.state ? entity.state : "unknown"}'
 
-          #     case "fog":
-          #       imageName = "fog.png";
-          #       break;
 
-          #     case "lightning":
-          #       imageName = "lightning.jpg";
-          #       break;
-
-          #     case "lightning-rainy":
-          #       imageName = "lightning-rainy.jpg";
-          #       break;
-
-          #     case "partlycloudy":
-          #       imageName = "partlycloudy.jpg";
-          #       break;
-
-            # #   case "pouring":
-            # #     imageName = "rainy.png";
-            # #     break;
-
-            # #   case "rainy":
-            # #     imageName = "rainy.jpg";
-            # #     break;
-
-            # #   case "snowy":
-            # #     imageName = "snow-day.jpg";
-            # #     break;
-
-            # #   case "snowy-rainy":
-            # #     imageName = "snow-day.jpg";
-            # #     break;
-
-            # #   case "sunny":
-            # #     imageName = "sunny-icon.png";
-            # #     break;
-
-            # #   case "windy":
-            # #     imageName = "windy.jpg";
-            # #     break;
-
-            # #   case "windy-variant":
-            # #     imageName = "windy.jpg";
-            # #     break;
-
-            # #   case "exceptional":
-            # #     imageName = "exceptional.jpg";
-            # #     break;
-            # # }
-            
-            # return "/local/custom_ui/floorplan/images/weather/" + imageName;
-            # '
 
         - name: Lights
           entities:
             - light.entryway
             - light.hue_living_room
             - light.hue_living_room_2
-            - group.group_living_room
-            - group.group_entry_way
             - switch.kasa_1
             - switch.kasa_2
             - switch.kasa_3
             - switch.kasa_4
-            - switch.mini_1
             - switch.stand_light
-            - switch.jasco_products_14291_in_wall_smart_switch_switch
+          states:
+            - state: 'on'
+              class: 'light-on'
+            - state: 'off'
+              class: 'light-off'
+          action:
+            domain: homeassistant   # This optional parameter allows you to use other services such as homeassistant.toggle like here.
+            service: toggle
+
+
+        - name: mqtt_porch_light
+          entities:
+            - switch.nodeid_4_switch
           states:
             - state: 'on'
               class: 'light-on'
@@ -121,40 +99,32 @@
 
 
 
-
-
         - name: Toogle script firstfloor lights
           entities:
           - script.firstfloor_lights_toggle
           action:
             domain: homeassistant   
-            service: toggle
+            service: turn_off
 
         - name: Toogle script livingroom lights
           entities:
           - script.livingroom_lights_toggle
           action:
             domain: homeassistant   
-            service: toggle
+            service: turn_off
 
 
         - name: media_players
           entities:
-            - media_player.living_room_tv
+            - media_player.livingroom_tv
             - media_player.ht_rc560_0009b0926861
           states:
             - state: 'on'
               class: 'squeezebox-on'
+            - state: 'playing'
+              class: 'squeezebox-playing'
             - state: 'off'
               class: 'squeezebox-off'
-#        - name: Switches
-#          entities:
-#            - switch.doorbell
-#          states:
-#            - state: 'on'
-#              class: 'doorbell-on'
-#            - state: 'off'
-#              class: 'doorbell-off'
 
         - name: devices
           entities:
@@ -190,55 +160,41 @@
             - person.laura_bechtel
             - person.nicolas_bechtel
             - state: 'home'
-              class: 'ps-home'
+              class: 'ps_home'
             - state: 'away'
-              class: 'ps-away'
+              class: 'ps_away' 
             - state: 'not_home'
-              class: 'ps-away'
-            - state: 'unkown'
-              class: 'ap-off'
+              class: 'ps_not_home' 
+          image_template: '
+            var imageName = "";
+            switch (entity.state) {
+              case "home":
+                imageName = "home";
+                break;
+              case "away":
+                imageName = "globe";
+                break;
+              case "not_home":
+                imageName = "globe";
+                break;
+        }
+        return "/local/custom_ui/floorplan/images/" + imageName + ".svg";
+        '
 
-#        - name: NVR
-#          entities:
-#            - binary_sensor.blue_iris_nvr
-#          text_template: '${(entity.state === "on") ? "online" : "offline"}'
-#          states:
-#            - state: 'off'
-#              class: 'danger-text'
-#            - state: 'on'
-#              class: 'success-text'
-
-#        - name: Alarm Panel
-#          entities:
-#            - alarm_control_panel.blink_blink_6727
-#          states:
-#            - state: 'armed_away'
-#              class: 'alarm-armed'
-#            - state: 'armed_home'
-#              class: 'alarm-armed'
-#            - state: 'disarmed'
-#              class: 'alarm-disarmed'
-
-#        - name: Binary sensors
-#          entities:
-#            - binary_sensor.front_hallway
-#            - binary_sensor.kitchen
-##            - binary_sensor.master_bedroom
-#            - binary_sensor.theatre_room
-#          states:
-#            - state: 'off'
-#              class: 'info-background'
-#            - state: 'on'
-#              class: 'warning-background'
-#          state_transitions:
-#            - name: On to off
-#              from_state: 'on'
-#              to_state: 'off'
-#              duration: 10
+        - name: Door sensors
+          entities:
+            - binary_sensor.nodeid_8_contact
+            - binary_sensor.0x00158d00040aa61c_contact
+          states:
+            - state: 'off'
+              class: 'info-background'
+            - state: 'on'
+              class: 'warning-background'
 
         - name: Cameras
           entities:
             - camera.g3_dome_garage
+            - camera.frontporch
             - camera.lv_pwr302
             - camera.octoprint
             - camera.blink_livingroom
@@ -247,20 +203,89 @@
             - state: 'idle'
               class: 'camera-idle'
               
-#        - name: buttons
-#          entities: group.group_living_room
-#          text_template: '${(group.group_living_room === "on") ? "Living Roomon" : "Living Roomoff"}'
-#          states:
-#            - state: 'off'
-#              class: 'danger-text'
-#            - state: 'on'
-#              class: 'success-text'
-#        - name: thermostat_temp
-#          entities:
-#            - climate.downstairs
-#            - climate.upstairs
-#          text_template: '${entity.attributes.current_temperature ? entity.attributes.current_temperature : "undefined"}'
-#
+
+
+        - name: dark_sky_icon
+          entities:
+            - sensor.dark_sky_icon
+          states:
+            class: 'darksky_image'
+          image_template: '
+            var imageName = "";
+
+            switch (entity.state) {
+              case "clear-day":
+                imageName = "day";
+                break;
+
+              case "clear-night":
+                imageName = "night";
+                break;
+
+              case "partly-cloudy-day":
+                imageName = "cloudy-day-1";
+                break;
+
+              case "partly-cloudy-night":
+                imageName = "cloudy-night-1";
+                break;
+
+              case "cloudy":
+                imageName = "cloudy";
+                break;
+
+              case "rain":
+                imageName = "rainy-1";
+                break;
+
+              case "snow":
+                imageName = "snowy-1";
+                break;
+
+              case "thunderstorm":
+                imageName = "thunder";
+                break;
+            }
+            return "/local/custom_ui/floorplan/images/svg-weather-icons/animated/" + imageName + ".svg";
+            '
+
+
+        - name: solaredge
+          entities:
+            - sensor.solaredge_current_power
+          class_template: '
+            var watt = parseFloat(entity.state.replace("W", ""));
+            if (watt < 10)
+              return "solar-out";
+            else if (watt < 500)
+              return "solar-dark";
+            else if (watt < 1000)
+              return "solar-on";
+            else if (watt < 5000)
+              return "solar-ok";
+            else if (watt < 8000)
+              return "solar-going";
+            else
+              return "solar-great";
+          '
+        - name: solar_numbers
+          entities:
+            -  sensor.solaredge_current_power_template
+            -  sensor.solaredge_energy_today_template
+            -  sensor.solaredge_power_consumption_template
+ 
+
+        - name: Binary sensors
+          entities:
+            - binary_sensor.nodeid_7_contact
+            - binary_sensor.nodeid_5_contact
+            - binary_sensor.0x00158d00045126d4_occupancy
+          states:
+            - state: 'off'
+              class: 'info-background'
+            - state: 'on'
+              class: 'warning-background'
+
 # The above text_template uses extended attributes from the climate.* objects to get current temperature.
 
 #        - name: text_states

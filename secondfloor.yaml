@@ -15,6 +15,8 @@
         - name: Lights
           entities:
             - light.c44f33ab5155_192_168_1_66
+            - light.hue_white_lamp_1
+            - switch.mini_1
           states:
             - state: 'on'
               class: 'light-on'
@@ -24,14 +26,33 @@
             domain: homeassistant   # This optional parameter allows you to use other services such as homeassistant.toggle like here.
             service: toggle
 
-#        - name: Switches
-#          entities:
-#            - switch.doorbell
-#          states:
-#            - state: 'on'
-#              class: 'doorbell-on'
-#            - state: 'off'
-#              class: 'doorbell-off'
+        - name: Sensors temp
+          entities:
+            -  sensor.upstairs_temperature
+          text_template: '${entity.state ? Math.ceil(entity.state) : "undefined"}°F'
+          class_template: '
+            var temp = parseFloat(entity.state.replace("°F", ""));
+            if (temp < 50) 
+              return "temp-low";
+            else if (temp < 75) 
+              return "temp-medium";
+            else
+              return "temp-high";
+            '
+
+        - name: Sensors humitity
+          entities:
+            -  sensor.upstairs_humitity
+          text_template: '${entity.state ? Math.ceil(entity.state) : "undefined"}%'
+          class_template: '
+            var hum = parseFloat(entity.state.replace("%", ""));
+            if (hum < 33) 
+              return "hum-low";
+            else if (hum < 66) 
+              return "hum-medium";
+            else
+              return "hum-high";
+          '
 
         - name: aps
           entities:

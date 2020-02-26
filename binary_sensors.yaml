@@ -6,16 +6,3 @@
   - platform: mqtt
     state_topic: dummy/floorplan/sensor
     name: SecondFloor
-
-
-#  - platform: template
-#    sensors:
-#      template_last_motion:
-#        friendly_name: 'Last Motion'
-#        value_template: >
-#          {%- set sensors = [states.binary_sensor.jasco_products_zw6302_portable_smart_motion_sensor_sensor, states.binary_sensor.aeon_labs_zw100_multisensor_6_sensor] %}
-#          {% for sensor in sensors %}
-#            {% if as_timestamp(sensor.last_changed) == as_timestamp(sensors | map(attribute='last_changed') | max) %}
-#              {{ sensor.name }}
-#            {% endif %}
-#          {% endfor %}

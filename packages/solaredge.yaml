@@ -1,0 +1,20 @@
+solaredge:
+  api_key: !secret solaredge_site_id
+  site_id: !secret solaredge_api_key
+
+
+sensor:
+  - platform: template
+    sensors:
+      solaredge_energy_today_template:
+        value_template: "{{ (states('sensor.solaredge_energy_today') | float / 1000) | round(2) }}kwh"
+
+  - platform: template
+    sensors:
+      solaredge_current_power_template:
+        value_template: "{{ (states('sensor.solaredge_current_power') | float / 1000) | round(2) }}kw"
+
+  - platform: template
+    sensors:
+      solaredge_power_consumption_template:
+        value_template: "{{ (states('sensor.solaredge_power_consumption') | float * 1) | round(2) }}kw"

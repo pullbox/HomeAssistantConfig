@@ -8,3 +8,12 @@ camera:
     username: !secret protect_username
     password: !secret protect_password
     verify_ssl: false
+
+
+  - platform: generic
+    name: frontporch
+    still_image_url: !secret camera_g3_dome_frontporch_image_url
+    stream_source: !secret camera_g3_dome_frontporch_stream_url
+    username: !secret protect_username
+    password: !secret protect_password
+    verify_ssl: false

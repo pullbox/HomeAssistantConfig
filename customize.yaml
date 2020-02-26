@@ -1,25 +1,49 @@
 light.c44f33ab5155_192_168_1_66:
   friendly_name: Nico Flux LED
-media_player.ht_rc560_0009b0926861:
-  friendly_name: Onkyo-HT-RC560
+
+
+
+## Porch Light Switch Node 4
+switch.nodeid_4_switch:
+  friendly_name: switch.porch_light
+
+## office Motion Sensor  
+# zwave motion sensor aeon 6
+binary_sensor.nodeid_5_contact:
+  off_delay: 30
+  icon: mdi:walk
+  device_class: motion
+
 sensor.aeon_labs_zw100_multisensor_6_burglar:
   friendly_name: sensor.office_burglar
-sensor.jasco_products_zw6302_portable_smart_motion_sensor_burglar:
+
+
+## Door sensor
+binary_sensor.nodeid_8_contact:
+  friendly_name: binary_sensor.door1
+## livingroom sensor
+
+binary_sensor.nodeid_7_contact:
+  off_delay: 30
+  icon: mdi:walk
+  device_class: motion 
+
+sensor.nodeid_7_sensor_burglar:
   friendly_name: sensor.living_room_burglar
+sensor.nodeid_7_battery_level:
+  friendly_name: sensor.living_room_battery_Level
+sensor.nodeid_7_alarm_level:
+  friendly_name: sensor.living_room_alarm_level
+sensor.nodeid_7_alarm_type:
+  friendly_name: sensor.living_room_alarm_type
+binary_sensor.nodeid_7_sensor:
+  friendly_name: binary_sensor.living_room_motion  
+
+
 switch.jasco_products_14291_in_wall_smart_switch_switch:
   friendly_name: porch_light
 sensor.aeon_labs_zw100_multisensor_6_luminance:
   friendly_name: sensor.office_luminance
-sensor.jasco_products_zw6302_portable_smart_motion_sensor_battery_level:
-  friendly_name: sensor.living_room_battery_Level
-sensor.jasco_products_zw6302_portable_smart_motion_sensor_alarm_level:
-  friendly_name: sensor.living_room_alarm_level
-sensor.jasco_products_zw6302_portable_smart_motion_sensor_alarm_type:
-  friendly_name: sensor.living_room_alarm_type
-binary_sensor.jasco_products_zw6302_portable_smart_motion_sensor_sensor:
-  friendly_name: binary_sensor.living_room
-sensor.jasco_products_zw6302_portable_smart_motion_sensor_sourcenodeid:
-  friendly_name: sensor.living_room_sourcenodeid
 switch.kasa_2:
   friendly_name: office_cabinet_led
 switch.kasa_4:
@@ -49,8 +73,7 @@ binary_sensor.firstfloor:
     - switch.kasa_4
     - switch.mini_1
     - switch.stand_light
-    - switch.jasco_products_14291_in_wall_smart_switch_switch
-
+    - switch.nodeid_4_switch
 binary_sensor.secondfloor:
   custom_ui_state_card: state-card-floorplan
   config: !include secondfloor.yaml
@@ -59,3 +82,5 @@ binary_sensor.secondfloor:
     - device_tracker.ap_nico
     - device_tracker.ap_upstairs
     - switch.nico_pc
+    - light.hue_white_lamp_1
+

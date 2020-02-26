@@ -14,3 +14,10 @@ sensor:
       - humidity
     scan_interval:
       minutes: 5
+
+
+  - platform: mqtt
+    state_topic: "darksky/actual/temperature"
+    unit_of_measurement: "F"
+    value_template: "{{ sensor.dark_sky_temperature }}"
+    
