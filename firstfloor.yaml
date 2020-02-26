@@ -189,7 +189,6 @@
             - person.daniel_bechtel
             - person.laura_bechtel
             - person.nicolas_bechtel
-          states:
             - state: 'home'
               class: 'ps-home'
             - state: 'away'
