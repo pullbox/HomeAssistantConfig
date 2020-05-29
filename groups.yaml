@@ -7,7 +7,29 @@
     entities:
       - light.hue_living_room
       - light.hue_living_room_2
+      - light.hue_white_lamp_1
       - switch.stand_light
+
+
+  group_all_lights:
+    name: All Lights
+    entities:
+      - group.group_firstfloor_lights
+      - group.group_front_entrance
+      - group.group_secondfloor_lights
+
+
+  group_all_switches:
+    name: All Switches
+    entities:
+      - switch.kasa_1
+      - switch.kasa_2
+      - switch.kasa_3
+      - switch.kasa_4
+      - switch.kasa_6
+      - switch.mini_1
+      - switch.nodeid_7_switch
+      - switch.nodeid_9_switch
 
   group_firstfloor_lights:
     name: Firstfloor lights
@@ -19,30 +41,24 @@
       - switch.kasa_2
       - switch.kasa_3
       - switch.kasa_4
-      - switch.mini_1
+      - switch.kasa_6
       - switch.stand_light
-      - switch.porch_light_switch
+      - switch.nodeid_7_switch
+
 
   group_secondfloor_lights:
     name: Secondfloor lights
     entities:
-      - light.c44f33ab5155_192_168_1_66
-      - light.hue_white_lamp_1
-
-  group_entry_way:    
-    name: Entry Way
-    entities:
-      - light.entryway
-      - light.hue_white_lamp_1
+      - light.nodeid_10_dimmer
+      - switch.nodeid_9_switch
 
 
   group_front_entrance:    
     name: front entrance
     entities:
       - light.entryway
-      - light.hue_white_lamp_1
-      - switch.nodeid_4_switch
-      - light.hue_white_lamp_1
+      - switch.nodeid_7_switch
+
 
 
       

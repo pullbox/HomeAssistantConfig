@@ -9,3 +9,8 @@
     sidebar_icon: mdi:home-floor-2
     url_path: secondfloor
     config: !include secondfloor.yaml
+
+#  - name: zwavegraph2
+#    sidebar_title: Z-Wave Graph
+#    sidebar_icon: mdi:access-point-network
+#    url_path: zwave

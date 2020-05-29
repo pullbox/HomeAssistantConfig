@@ -14,57 +14,57 @@
 #    value_template: '{{ value_json.value }}'
 
 
-sensor:
+#sensor:
 ##Living Room sensors
-  - platform: mqtt
-    name: "Livingroom Sensor burglar"
-    state_topic: "homeassistant/sensorlivingroom/113/1/10"
-    value_template: '{{ value_json.value }}'
-  - platform: mqtt
-    name: "Livingroom sensor battery"
-    state_topic: "homeassistant/sensorlivingroom/128/1/0"
-    value_template: '{{ value_json.value }}'
+#  - platform: mqtt
+#    name: "Livingroom Sensor burglar"
+#    state_topic: "homeassistant/sensorlivingroom/113/1/10"
+#    value_template: '{{ value_json.value }}'
+#  - platform: mqtt
+#    name: "Livingroom sensor battery"
+#    state_topic: "homeassistant/sensorlivingroom/128/1/0"
+#    value_template: '{{ value_json.value }}'
+
 
 ##door sensor
-  - platform: mqtt
-    name: "door 1 burglar"
-    state_topic: "homeassistant/8/113/1/10"
-    value_template: '{{ value_json.value }}'
-  - platform: mqtt
-    name: "door 1 sensor battery"
-    state_topic: "homeassistant/8/128/1/0"
-    value_template: '{{ value_json.value }}'
-  - platform: mqtt
-    name: "door 1 sensor"
-    state_topic: "homeassistant/8/48/1/0"
-    value_template: '{{ value_json.value }}'
-  - platform: mqtt
-    name: "door 1 sensor power mgmnt"
-    state_topic: "homeassistant/8/113/1/11"
-    value_template: '{{ value_json.value }}'
+#  - platform: mqtt
+#    name: "door 1 burglar"
+#    state_topic: "homeassistant/8/113/1/10"
+#    value_template: '{{ value_json.value }}'
+#  - platform: mqtt
+#    name: "door 1 sensor battery"
+#    state_topic: "homeassistant/8/128/1/0"
+#    value_template: '{{ value_json.value }}'
+#  - platform: mqtt
+#    name: "door 1 sensor"
+#    state_topic: "homeassistant/8/48/1/0"
+#    value_template: '{{ value_json.value }}'
+#  - platform: mqtt
+#    name: "door 1 sensor power mgmnt"
+#    state_topic: "homeassistant/8/113/1/11"
+#    value_template: '{{ value_json.value }}'
 ## office sensors
-  - platform: mqtt
-    name: "Office burglar sensor"
-    state_topic: "homeassistant/sensoroffice/113/1/10"
-    value_template: '{{ value_json.value }}'
-  - platform: mqtt
-    name: "Office temperatur"
-    state_topic: "homeassistant/sensoroffice/49/1/1"
-    value_template: '{{ value_json.value }}'
-  - platform: mqtt
-    name: "office luminence"
-    state_topic: "homeassistant/sensoroffice/49/1/3"
-    value_template: '{{ value_json.value }}'
-  - platform: mqtt
-    name: "office humidity"
-    state_topic: "homeassistant/sensoroffice/49/1/5"
-    value_template: '{{ value_json.value }}'
-  - platform: mqtt
-    name: "office ultraviolet"
-    state_topic: "homeassistant/sensoroffice/49/1/27"
-    value_template: '{{ value_json.value }}'
-  - platform: mqtt
-    name: "office sensor battery"
-    state_topic: "homeassistant/sensoroffice/128/1/0"
-    value_template: '{{ value_json.value }}'
-
+#  - platform: mqtt
+#    name: "Office burglar sensor"
+#    state_topic: "homeassistant/sensoroffice/113/1/10"
+#    value_template: '{{ value_json.value }}'
+#  - platform: mqtt
+#    name: "Office temperatur"
+#    state_topic: "homeassistant/sensoroffice/49/1/1"
+#    value_template: '{{ value_json.value }}'
+#  - platform: mqtt
+#    name: "office luminence"
+#    state_topic: "homeassistant/sensoroffice/49/1/3"
+#    value_template: '{{ value_json.value }}'
+#  - platform: mqtt
+#    name: "office humidity"
+#    state_topic: "homeassistant/sensoroffice/49/1/5"
+#    value_template: '{{ value_json.value }}'
+#  - platform: mqtt
+#    name: "office ultraviolet"
+#    state_topic: "homeassistant/sensoroffice/49/1/27"
+#    value_template: '{{ value_json.value }}'
+#  - platform: mqtt
+#    name: "office sensor battery"
+#    state_topic: "homeassistant/sensoroffice/128/1/0"
+#    value_template: '{{ value_json.value }}'

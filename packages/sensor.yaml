@@ -13,9 +13,9 @@ sensor:
       template_last_motion:
         friendly_name: 'Last Motion'
         value_template: >
-          {%- set sensors = [states.sensor.livingroom_sensor_burglar , states.sensor.office_burglar_sensor  ] %}
+          {%- set sensors = [states.sensor.sensor.nodeid_5_alarm_home_security_2 , states.sensor.nodeid_5_alarm_home_security_2  ] %}
           {% for sensor in sensors %}
-            {% if as_timestamp(sensor.last_changed) == as_timestamp(sensors | map(attribute='last_changed') | max) %}
+            {% if as_timestamp(sensor.lastUpdate) == as_timestamp(sensors | map(attribute='lastUpdate') | max) %}
               {{ sensor.name }}
             {% endif %}
           {% endfor %}

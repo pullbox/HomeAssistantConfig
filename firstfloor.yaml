@@ -86,7 +86,7 @@
 
         - name: mqtt_porch_light
           entities:
-            - switch.nodeid_4_switch
+            - switch.nodeid_3_switch
           states:
             - state: 'on'
               class: 'light-on'

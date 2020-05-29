@@ -12,6 +12,7 @@ homeassistant:
 
 default_config:
 ios:
+cloud: !include cloud.yaml
 
 frontend:
   extra_html_url:
@@ -61,7 +62,7 @@ tplink:
     - host: !secret kasa_switch_2
     - host: !secret kasa_switch_3
     - host: !secret kasa_switch_4
-
+    - host: !secret kasa_switch_6
 
 glances:
   - host: !secret glances_ip_address
@@ -88,3 +89,9 @@ script: !include scripts.yaml
 scene: !include scenes.yaml
 #light: !include lights.yaml
 #camera: !include cameras.yaml
+
+telegram_bot:
+  - platform: polling
+    api_key: !secret telegram_api_key
+    allowed_chat_ids:
+      -  !secret chat_id_daniel

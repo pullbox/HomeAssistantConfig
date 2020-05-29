@@ -10,3 +10,9 @@ media_player:
   #  host: !secret onkyo_ip_address
   #  name: receiver
 
+
+alexa_media:
+  accounts:
+    - email: !secret amz_email
+      password: !secret amz_passw
+      url: alexa.amazon.com

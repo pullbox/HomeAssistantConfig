@@ -1,0 +1,110 @@
+alexa:
+  filter:
+    exclude_entities:
+      - media_player.my_dash
+      - media_player.daniel_s_alexa_apps
+      - media_player.music_rooms
+      - light.nodeid_11_rgb_dimmer
+      - light.c44f33ab5155_192_168_1_66
+
+    include_entities:
+      - switch.stand_light
+      - switch.nodeid_7_switch
+      # LED Bridge  
+      - switch.kasa_1
+      # office cabinet LED
+      - switch.kasa_2
+      # garage LED
+      - switch.kasa_3
+      - switch.kasa_4
+      - switch.kasa_5
+      # office fan
+      - switch.kasa_6
+      # Nitt Room
+      - switch.nodeid_9_switch
+      - switch.lg_tv
+    include_domains:
+      - light
+      - group
+      - media_player
+    exclude_domains:
+      - input_boolean
+      - switch
+      - sensor
+      - alarm_control_panel
+      - alert
+      - climate
+      - cover
+      - fan
+      - lock
+      - scene
+      - script 
+
+
+
+# Living Room
+  entity_config:
+    light.hue_white_lamp_1:
+      name: Living Room Light 3
+      description: Main light in Living room (at the patio door)
+      display_categories: LIGHT
+    light.hue_living_room_2:
+      name: Living Room Light 2
+      description: Light in Living room (walkthrough)
+      display_categories: LIGHT
+    light.hue_living_room:
+      name: Living Room Light 1
+      description: Light in Living room (walkthrough)
+      display_categories: LIGHT
+    switch.stand_light:
+      name: Stand Light
+      description: stand light in living room
+      display_categories: LIGHT
+
+# Kitchen
+    switch.kasa_4:
+      name: Kitchen LED
+      description: Kitchen Cabinet LED
+      display_categories: LIGHT
+
+# Entryway
+    light.hue_entryway_new:
+      name: Entryway Light
+      description: Entryway light
+      display_categories: LIGHT
+    switch.nodeid_7_switch:
+      name: Front Porch Light
+      description: Front Porch Light
+      display_categories: LIGHT
+
+# Master bath
+    light.nodeid_10_dimmer:
+      name: Master bath room
+      description: Master bath room dimmer
+      display_categories: LIGHT
+
+# Garage
+    switch.kasa_3:
+      name: Garage LED
+      description: Bench LED Light
+      display_categories: LIGHT
+
+# Nitt Room
+    switch.nodeid_9_switch:
+      name: Nitt Room light
+      description: Light in Nitt Room
+      display_categories: LIGHT
+
+# Office
+    switch.kasa_6:
+      name: Office FAN
+      description: Fan under my Table
+      display_categories: SWITCH
+    switch.kasa_2:
+      name: Office Cabinet LED
+      description: LED on top of cabinet
+      display_categories: LIGHT
+    switch.kasa_1:
+      name: LED Bridge
+      description: Daniels LED Bridge
+      display_categories: LIGHT
