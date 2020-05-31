@@ -95,3 +95,5 @@ telegram_bot:
     api_key: !secret telegram_api_key
     allowed_chat_ids:
       -  !secret chat_id_daniel
+
+

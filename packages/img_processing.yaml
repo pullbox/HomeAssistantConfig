@@ -1,0 +1,39 @@
+image_processing:
+  - platform: facebox
+    ip_address: !secret mb_ip_address
+    port: !secret mb_port
+    source:
+      - entity_id: camera.lv_pwr302
+        name: img_proc_office 
+      - entity_id:  camera.g3_dome_garage
+        name: img_proc_garage 
+      - entity_id:  camera.frontporch
+        name: img_proc_frontporch 
+
+
+
+sensor:
+  - platform: template
+    sensors:
+      office_matched_face_counter:
+        friendly_name: Matched
+        unit_of_measurement: "faces"
+        value_template: "{{ state_attr('image_processing.img_proc_office', 'total_matched_faces') }}"
+
+
+      office_face_counter:
+        friendly_name: Faces
+        value_template: "{{ state_attr('image_processing.img_proc_office', 'total_faces') }}"
+        unit_of_measurement: "faces"
+
+
+      garage_matched_face_counter:
+        friendly_name: Matched
+        unit_of_measurement: "faces"
+        value_template: "{{ state_attr('image_processing.img_proc_garage', 'total_matched_faces') }}"
+
+
+      garage_face_counter:
+        friendly_name: Faces
+        value_template: "{{ state_attr('image_processing.img_proc_garage', 'total_faces') }}"
+        unit_of_measurement: "faces"

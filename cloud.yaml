@@ -1,3 +1,20 @@
+google_actions:
+  filter:
+    exclude_domains:
+        - input_boolean
+        - switch
+        - sensor
+        - alarm_control_panel
+        - alert
+        - climate
+        - cover
+        - fan
+        - lock
+        - scene
+        - script 
+        - camera
+        - group
+
 alexa:
   filter:
     exclude_entities:
