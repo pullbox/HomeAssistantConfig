@@ -37,3 +37,15 @@ sensor:
         friendly_name: Faces
         value_template: "{{ state_attr('image_processing.img_proc_garage', 'total_faces') }}"
         unit_of_measurement: "faces"
+
+
+      front_porch_matched_face_counter:
+        friendly_name: Matched
+        unit_of_measurement: "faces"
+        value_template: "{{ state_attr('image_processing.img_proc_frontporch', 'total_matched_faces') }}"
+
+
+      front_porch_face_counter:
+        friendly_name: Faces
+        value_template: "{{ state_attr('image_processing.img_proc_frontporch', 'total_faces') }}"
+        unit_of_measurement: "faces"
