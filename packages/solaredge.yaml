@@ -1,6 +1,6 @@
-solaredge:
-  api_key: !secret solaredge_site_id
-  site_id: !secret solaredge_api_key
+# solaredge:
+#  api_key: !secret solaredge_site_id
+#  site_id: !secret solaredge_api_key
 
 
 sensor:
