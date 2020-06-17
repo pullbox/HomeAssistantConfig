@@ -19,3 +19,4 @@ secrets.yaml
 known_devices.yaml
 webostv.conf
 *.conf
+google_calendars.yaml
