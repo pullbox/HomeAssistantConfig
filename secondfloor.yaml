@@ -58,6 +58,7 @@
         - name: media_players
           entities:
             - media_player.echo_master_bed_room
+            - media_player.nicolas_tap
           states:
             - state: 'on'
               class: 'squeezebox-on'
