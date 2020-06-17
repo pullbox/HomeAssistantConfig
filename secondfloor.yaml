@@ -15,8 +15,8 @@
         - name: Lights
           entities:
             - light.c44f33ab5155_192_168_1_66
-            - light.hue_white_lamp_1
-            - switch.mini_1
+            - light.nodeid_10_dimmer
+            - switch.nodeid_9_switch
           states:
             - state: 'on'
               class: 'light-on'
@@ -53,6 +53,19 @@
             else
               return "hum-high";
           '
+
+
+        - name: media_players
+          entities:
+            - media_player.echo_master_bed_room
+          states:
+            - state: 'on'
+              class: 'squeezebox-on'
+            - state: 'playing'
+              class: 'squeezebox-playing'
+            - state: 'off'
+              class: 'squeezebox-off'
+
 
         - name: aps
           entities:

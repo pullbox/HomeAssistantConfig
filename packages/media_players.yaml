@@ -11,8 +11,8 @@ media_player:
   #  name: receiver
 
 
-alexa_media:
-  accounts:
-    - email: !secret amz_email
-      password: !secret amz_passw
-      url: alexa.amazon.com
+# alexa_media:
+#  accounts:
+#    - email: !secret amz_email
+#      password: !secret amz_passw
+#      url: alexa.amazon.com
