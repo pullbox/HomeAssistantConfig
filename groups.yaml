@@ -51,6 +51,7 @@
     entities:
       - light.nodeid_10_dimmer
       - switch.nodeid_9_switch
+      - light.c44f33ab5155_192_168_1_66
 
 
   group_front_entrance:    

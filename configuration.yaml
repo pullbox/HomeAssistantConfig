@@ -40,7 +40,7 @@ mqtt:
 http:
 #   ssl_certificate: /ssl/fullchain.pem
 #   ssl_key: /ssl/privkey.pem
-  base_url: !secret ssldns_base_url
+# deprecated - remote  base_url: !secret ssldns_base_url
 
   
 #zwave:
@@ -90,10 +90,18 @@ scene: !include scenes.yaml
 #light: !include lights.yaml
 #camera: !include cameras.yaml
 
-telegram_bot:
-  - platform: polling
-    api_key: !secret telegram_api_key
-    allowed_chat_ids:
-      -  !secret chat_id_daniel
+#telegram_bot:
+#  - platform: polling
+#    api_key: !secret telegram_api_key
+#    allowed_chat_ids:
+#      -  !secret chat_id_daniel
 
 
+recorder:
+  db_url: !secret recorder_db_url
+
+
+  # Example configuration.yaml entry
+spotify:
+  client_id: !secret spotify_client_ID
+  client_secret: !secret spotify_secret

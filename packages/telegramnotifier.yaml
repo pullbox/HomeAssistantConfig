@@ -1,4 +1,4 @@
-notify:
-  - name: telegramDaniel
-    platform: telegram
-    chat_id: !secret chat_id_daniel
+#notify:
+#  - name: telegramDaniel
+#    platform: telegram
+#    chat_id: !secret chat_id_daniel

@@ -17,3 +17,11 @@ camera:
     username: !secret protect_username
     password: !secret protect_password
     verify_ssl: false
+
+  - platform: generic
+    name: backporch
+    still_image_url: !secret camera_g3_flex_backporch_image_url
+    stream_source: !secret camera_g3_flex_backporch_stream_url
+    username: !secret protect_username
+    password: !secret protect_password
+    verify_ssl: false

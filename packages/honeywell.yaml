@@ -3,7 +3,7 @@ climate honeywell:
   - platform: honeywell
     username: !secret honeywell_username
     password: !secret honeywell_password
-    region: us
+# deprecated -remove    region: us
 
 
 sensor:
